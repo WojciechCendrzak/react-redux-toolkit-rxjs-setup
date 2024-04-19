@@ -10,7 +10,8 @@ export const store = configureStore({
   reducer: {
     app: appSlice.reducer,
   },
-  middleware: [epicMiddleware],
+  // @ts-ignore
+  middleware: () => [epicMiddleware],
 });
 
 epicMiddleware.run(appEpic$);
